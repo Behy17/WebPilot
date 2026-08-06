@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0e9f6e">
+  <title>Zásady ochrany osobních údajů | WebPilot</title>
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://www.web-pilot.cz/zasady.html">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --bg-soft: #f5f8f6;
+      --bg-tint: #ecfdf5;
+      --ink: #0a1512;
+      --ink-2: #35433d;
+      --muted: #6f7d77;
+      --line: #e7ede9;
+      --line-2: #dde6e1;
+      --accent: #0e9f6e;
+      --accent-deep: #047857;
+      --sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      --serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+      --maxw: 900px;
+      --gutter: clamp(20px, 5vw, 40px);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.65;
+      font-size: 16.5px;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    ::selection { background: var(--accent); color: #fff; }
+
+    header {
+      background: rgba(255,255,255,.85);
+      backdrop-filter: saturate(180%) blur(14px);
+      -webkit-backdrop-filter: saturate(180%) blur(14px);
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 18px var(--gutter);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      font-weight: 600;
+      letter-spacing: -.02em;
+      color: var(--ink);
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 14.5px;
+      font-weight: 600;
+      color: var(--ink-2);
+      padding: 9px 16px;
+      border: 1px solid var(--line-2);
+      border-radius: 999px;
+      transition: border-color .2s, color .2s;
+    }
+    .back-link:hover { border-color: var(--accent); color: var(--accent-deep); }
+
+    .wrap {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: clamp(48px, 7vw, 80px) var(--gutter);
+    }
+
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 13px; font-weight: 600; letter-spacing: .08em;
+      text-transform: uppercase; color: var(--accent-deep);
+      margin-bottom: 18px;
+    }
+    .eyebrow::before { content: ""; width: 22px; height: 1.5px; background: var(--accent); display: inline-block; }
+
+    h1 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(2.2rem, 5vw, 3.1rem);
+      line-height: 1.08;
+      letter-spacing: .015em;
+      color: var(--ink);
+      margin-bottom: 14px;
+    }
+
+    .intro-note { color: var(--muted); font-size: 15px; margin-bottom: 8px; }
+
+    h2 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(1.3rem, 2.6vw, 1.6rem);
+      line-height: 1.15;
+      color: var(--ink);
+      margin-top: 44px;
+      margin-bottom: 16px;
+    }
+
+    p { margin-bottom: 15px; color: var(--ink-2); }
+
+    ul { margin: 0 0 15px 22px; }
+    li { margin-bottom: 8px; color: var(--ink-2); }
+
+    strong { color: var(--ink); font-weight: 600; }
+
+    .contact-box {
+      background: var(--bg-soft);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px 24px;
+      margin-bottom: 8px;
+    }
+    .contact-box p { margin: 0; color: var(--ink-2); }
+
+    a.inline { color: var(--accent-deep); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+
+    .effective { margin-top: 44px; font-size: 14px; color: var(--muted); }
+
+    footer {
+      background: var(--bg-soft);
+      border-top: 1px solid var(--line);
+      padding: 36px 0;
+    }
+    .footer-wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 var(--gutter);
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .footer-wrap a { color: var(--accent-deep); font-weight: 600; }
+    .footer-wrap a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-wrap">
+      <a href="index.html" class="brand">WebPilot</a>
+      <a href="index.html" class="back-link">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+        Zpět na web
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <span class="eyebrow">Ochrana údajů</span>
+      <h1>Zásady ochrany osobních údajů</h1>
+      <p class="intro-note">Jak nakládám s vašimi údaji a jaká máte práva. V souladu s GDPR.</p>
+
+      <h2>1. Správce osobních údajů</h2>
+      <div class="contact-box">
+        <p>
+          <strong>Vladimír Běhavý</strong><br>
+          IČO: 88175855<br>
+          DIČ: CZ88175855<br>
+          Email: <a class="inline" href="mailto:info@web-pilot.cz">info@web-pilot.cz</a><br>
+          Telefon: <a class="inline" href="tel:+420773171707">+420 773 171 707</a><br>
+          Web: web-pilot.cz
+        </p>
+      </div>
+
+      <h2>2. Jaké údaje sbíráme</h2>
+      <p>Prostřednictvím formulářů na webu sbíráme:</p>
+      <ul>
+        <li>Jméno a příjmení</li>
+        <li>E-mailová adresa</li>
+        <li>Telefonní číslo</li>
+        <li>Název vaší firmy</li>
+        <li>Obsah vaší poptávky nebo zprávy</li>
+      </ul>
+
+      <h2>3. Účely zpracování</h2>
+      <p>Vaše osobní údaje zpracováváme pro tyto účely:</p>
+      <ul>
+        <li>Vyřízení vaší poptávky a komunikace s vámi</li>
+        <li>Plnění smluvních povinností</li>
+        <li>Dodržování právních předpisů</li>
+        <li>Ochrana oprávněných zájmů</li>
+      </ul>
+
+      <h2>4. Doba uchovávání údajů</h2>
+      <p>Údaje z formulářů uchovávám maximálně 12 měsíců bez spolupráce. Pokud mezi námi dojde ke smlouvě, uchovávám údaje po dobu trvání vztahu a dále podle právních předpisů.</p>
+
+      <h2>5. Přístup k údajům</h2>
+      <p>Vaše údaje mají přístup pouze osoby nebo organizace nezbytně potřebné pro plnění našich služeb (např. poskytovatel hostingu, e-mailových služeb, účetnictví).</p>
+
+      <h2>6. Předávání mimo EU</h2>
+      <p>Vaše osobní údaje nepředáváme mimo Evropskou unii.</p>
+
+      <h2>7. Vaše práva</h2>
+      <p>Máte právo:</p>
+      <ul>
+        <li>Přístupu ke svým osobním údajům</li>
+        <li>Opravy nesprávných údajů</li>
+        <li>Výmazu svých údajů (právo být zapomenut)</li>
+        <li>Omezení zpracování</li>
+        <li>Přenositelnosti údajů</li>
+        <li>Námitky proti zpracování</li>
+      </ul>
+
+      <h2>8. Dobrovolnost poskytnutí údajů</h2>
+      <p>Poskytnutí vašich osobních údajů je zcela dobrovolné. Pokud nám nesdělíte požadované údaje, nebudeme moci vyřídit vaši poptávku.</p>
+
+      <h2>9. Automatizované rozhodování</h2>
+      <p>Vaše údaje se nepoužívají pro automatizované rozhodování, které by vás právně či významně ovlivňovalo.</p>
+
+      <h2>10. Cookies</h2>
+      <p>Web používá pouze technické a funkční cookies nezbytné pro správný chod webu. Ostatní cookies jsou používány pouze se souhlasem návštěvníka.</p>
+
+      <h2>11. Kontakt k správci</h2>
+      <p>Máte-li dotazy ohledně ochrany vašich osobních údajů, kontaktujte mě na:</p>
+      <p><strong>Email:</strong> <a class="inline" href="mailto:info@web-pilot.cz">info@web-pilot.cz</a><br><strong>Telefon:</strong> <a class="inline" href="tel:+420773171707">+420 773 171 707</a></p>
+
+      <p class="effective">Tyto zásady ochrany osobních údajů jsou účinné od 1. dubna 2026 a jsou v souladu se GDPR.</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-wrap">
+      <p>© 2026 WebPilot · Vladimír Běhavý — <a href="index.html">Zpět na web</a></p>
+    </div>
+  </footer>
+</body>
+</html>
