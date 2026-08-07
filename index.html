@@ -496,6 +496,44 @@
   .about-list .it h4 { font-family: var(--sans); font-weight: 700; font-size: 1.02rem; }
   .about-list .it p { font-size: 14.5px; color: var(--ink-2); margin-top: 3px; }
 
+  /* ---------- Realizace & recenze ---------- */
+  .case-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 440px)); justify-content: center; gap: 24px; margin-top: 56px; }
+  .case-card {
+    position: relative; background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius-lg);
+    padding: 34px 32px 30px; text-align: left; box-shadow: var(--shadow-md);
+    transition: transform .35s var(--ease), box-shadow .35s var(--ease);
+  }
+  .case-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+  .case-browser {
+    display: flex; align-items: center; gap: 10px; width: 100%;
+    background: var(--bg-soft); border: 1px solid var(--line); border-radius: 12px;
+    padding: 11px 14px; transition: border-color .25s var(--ease), background .25s var(--ease), transform .25s var(--ease), box-shadow .25s var(--ease);
+  }
+  .case-browser:hover { border-color: rgba(14,159,110,.35); background: var(--bg); box-shadow: var(--shadow-sm); transform: translateY(-1px); }
+  .case-dots { display: inline-flex; gap: 5px; flex-shrink: 0; }
+  .case-dots i { width: 7px; height: 7px; border-radius: 50%; background: #d5ddd8; display: block; }
+  .case-dots i:nth-child(3) { background: #bfe9d4; }
+  .case-domain { font-family: var(--sans); font-size: 13px; font-weight: 600; color: var(--ink-2); letter-spacing: -.005em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .case-stars { margin-left: auto; display: inline-flex; gap: 2px; color: #f5b400; flex-shrink: 0; }
+  .case-stars svg { width: 13px; height: 13px; }
+  .case-browser-arrow { width: 14px; height: 14px; color: var(--accent-deep); flex-shrink: 0; transition: transform .25s var(--ease); }
+  .case-browser:hover .case-browser-arrow { transform: translate(2px, -2px); }
+  .case-quote {
+    position: relative; margin: 22px 0 0; padding-top: 6px; font-family: var(--serif); font-size: 1.08rem;
+    font-weight: 500; line-height: 1.55; color: var(--ink-2);
+  }
+  .case-quote::before {
+    content: "“"; position: absolute; top: -22px; left: -4px; font-family: var(--serif); font-size: 3.4rem;
+    font-weight: 700; color: var(--accent); opacity: .28; line-height: 1;
+  }
+  .case-person { margin-top: 26px; padding-top: 22px; border-top: 1px solid var(--line); display: flex; align-items: center; gap: 14px; }
+  .case-avatar {
+    width: 84px; height: 84px; border-radius: 50%; object-fit: cover; flex-shrink: 0;
+    border: 2px solid var(--bg-tint); box-shadow: 0 6px 16px -6px rgba(10,21,18,.18);
+  }
+  .case-person b { font-family: var(--sans); font-size: 15px; font-weight: 700; display: block; letter-spacing: -.005em; }
+  .case-person span { font-size: 13px; color: var(--muted); }
+
   /* ---------- FAQ ---------- */
   .faq-wrap { max-width: 800px; margin: 56px auto 0; display: grid; gap: 14px; }
   .faq { border: 1px solid var(--line); border-radius: var(--radius); background: var(--bg); overflow: hidden; transition: border-color .3s, box-shadow .3s; }
@@ -723,6 +761,7 @@
       <a class="nlink" href="#proces">Proces</a>
       <a class="nlink" href="#cenik">Ceník</a>
       <a class="nlink" href="#o-mne">O mně</a>
+      <a class="nlink" href="#realizace">Recenze</a>
       <a class="nlink" href="#faq">FAQ</a>
     </nav>
     <div class="nav-cta">
@@ -742,6 +781,7 @@
   <a href="#proces">Proces</a>
   <a href="#cenik">Ceník</a>
   <a href="#o-mne">O mně</a>
+  <a href="#realizace">Recenze</a>
   <a href="#faq">FAQ</a>
   <a class="btn btn-primary" href="#kontakt">Nezávazná poptávka</a>
 </div>
@@ -998,6 +1038,41 @@
   </div>
 </section>
 
+<!-- ===================== REALIZACE & RECENZE ===================== -->
+<section class="block" id="realizace">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <h2 class="h2">Weby, které pro klienty už fungují.</h2>
+      <p class="lead">Pár referencí od lidí, se kterými jsem spolupracoval.</p>
+    </div>
+
+    <div class="case-grid">
+      <div class="case-card reveal d1">
+        <a class="case-browser" href="https://www.proseccovsrdci.cz/" target="_blank" rel="noopener noreferrer" aria-label="Otevřít web proseccovsrdci.cz">
+          <span class="case-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="case-domain">proseccovsrdci.cz</span>
+          <span class="case-stars" aria-label="Hodnocení 5 z 5 hvězdiček">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.6 7.1.7-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7-5.4-4.7 7.1-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.6 7.1.7-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7-5.4-4.7 7.1-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.6 7.1.7-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7-5.4-4.7 7.1-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.6 7.1.7-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7-5.4-4.7 7.1-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.6 7.1.7-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7-5.4-4.7 7.1-.7z"/></svg>
+          </span>
+          <svg class="case-browser-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>
+        <p class="case-quote">Pan Běhavý mi vytvořil webové stránky na jedničku. Spolupráce byla rychlá, příjemná a maximálně profesionální. Pomohl mi s každým požadavkem, vždy hledal to nejlepší možné řešení a jeho přístup byl opravdu nadstandardní. Jsem ráda, že jsme si vybrali právě jeho — a s čistým svědomím ho doporučuji všem firmám, které chtějí kvalitní a moderní web.</p>
+        <div class="case-person">
+          <img class="case-avatar" src="recenze-katerina.png?v=3" alt="Kateřina Ralbovská" loading="lazy" decoding="async" />
+          <div>
+            <b>Kateřina Ralbovská</b>
+            <span>Prosecco v srdci</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===================== FAQ ===================== -->
 <section class="block" id="faq">
   <div class="wrap">
@@ -1130,6 +1205,7 @@
         <a href="#o-mne">O mně</a>
         <a href="#proces">Jak pracuji</a>
         <a href="#cenik">Ceník</a>
+        <a href="#realizace">Recenze</a>
         <a href="#faq">FAQ</a>
         <a href="zasady.html">Zásady ochrany údajů</a>
       </div>
