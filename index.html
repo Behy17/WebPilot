@@ -320,45 +320,115 @@
   .hero-video { position: relative; z-index: 1; width: 100%; height: 100%; object-fit: cover; display: block; }
   .hero-showcase.no-video .hero-video { display: none; }
 
-  /* ---------- Scroll-expand hero ---------- */
-  .xhero { position: relative; overflow-x: clip; }
-  .xhero-bg { position: absolute; inset: 0 0 auto 0; height: 100vh; height: 100dvh; z-index: 0; will-change: opacity;
-    background: radial-gradient(130% 100% at 50% -8%, #145c41 0%, #0e3f2f 30%, #0a2b21 60%, #071e18 100%); }
+  /* ---------- Hero (hero-1 inspired: dark, bold, glow horizon) ---------- */
+  .xhero { position: relative; overflow: hidden; padding: 180px 0 200px;
+    background: linear-gradient(180deg, #040f0b 0%, #071e18 45%, #0a2b21 100%); }
+  .xhero-bg { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
   .xhero-grid { position: absolute; inset: 0;
-    background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
-    background-size: 54px 54px; -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 30%, #000, transparent 75%); mask-image: radial-gradient(ellipse 80% 70% at 50% 30%, #000, transparent 75%); }
-  .xhero-stage { position: relative; z-index: 2; height: 100vh; height: 100dvh; display: grid; place-items: center; }
-  .xhero-copy { position: absolute; inset: 0; z-index: 3; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; text-align: center; padding: 0 24px; pointer-events: none; will-change: transform, opacity; }
-  .xhero-copy::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
-    background: radial-gradient(ellipse 68% 62% at 50% 46%, rgba(6,22,17,.74) 0%, rgba(6,22,17,.5) 42%, rgba(6,22,17,.12) 70%, transparent 82%); }
-  .xhero-kicker { margin: 0; font-family: var(--sans); font-size: 13px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: #6ee7b7; }
-  .xhero-title { margin: 0; font-family: var(--serif); font-weight: 600; font-size: clamp(2.6rem, 7vw, 5.2rem); line-height: 1.04; letter-spacing: -.02em; color: #f2f8f5; text-shadow: 0 2px 30px rgba(0,0,0,.35); }
-  .xhero-title em { font-style: italic; color: #6ee7b7; }
-  .xhero-subtitle { margin: 0; max-width: 560px; font-family: var(--sans); font-size: clamp(1rem, 1.7vw, 1.2rem); line-height: 1.55; color: rgba(234,244,239,.82); text-shadow: 0 1px 16px rgba(0,0,0,.4); }
-  .xhero-media { position: relative; z-index: 2; width: 300px; height: 400px; max-width: 95vw; max-height: 85vh; border-radius: 22px; overflow: hidden; box-shadow: 0 30px 80px -22px rgba(0,0,0,.65); background: linear-gradient(150deg, #0e3f2f, #071e18); will-change: width, height; }
-  .xhero-media video { position: relative; z-index: 1; width: 100%; height: 100%; object-fit: cover; display: block; }
-  .xhero-media.no-video video { display: none; }
-  .xhero-media .xfallback { position: absolute; inset: 0; z-index: 0; display: grid; place-items: center; font-family: var(--serif); font-weight: 600; font-size: clamp(1.6rem, 4vw, 2.6rem); color: rgba(110,231,183,.3); }
-  .xhero-media .xtint { position: absolute; inset: 0; z-index: 2; background: linear-gradient(180deg, rgba(7,25,19,.5), rgba(7,25,19,.28) 42%, rgba(7,25,19,.58)); opacity: 1; pointer-events: none; will-change: opacity; }
-  .xhero-cue { position: absolute; left: 0; right: 0; bottom: 22px; z-index: 3; display: flex; flex-direction: column; align-items: center; gap: 10px; }
-  .xhero-date { font-family: var(--sans); font-size: 12.5px; letter-spacing: .14em; text-transform: uppercase; color: #6ee7b7; font-weight: 600; will-change: transform, opacity; }
-  .xhero-scroll { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.22); color: #fff; font-family: var(--sans); font-size: 13px; font-weight: 600; padding: 9px 18px; border-radius: 999px; cursor: pointer; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); will-change: transform, opacity; transition: background .2s; }
-  .xhero-scroll:hover { background: rgba(255,255,255,.2); }
-  .xhero-scroll svg { width: 15px; height: 15px; animation: nudge 1.6s ease-in-out infinite; }
-  .xhero-scroll--icon { width: 46px; height: 46px; padding: 0; justify-content: center; border-radius: 50%; }
-  .xhero-scroll--icon svg { width: 20px; height: 20px; }
+    background-image: linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px);
+    background-size: 56px 56px;
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 62%); mask-image: linear-gradient(to bottom, #000 0%, transparent 62%); }
+  .xhero-glow {
+    position: absolute; left: 0; right: 0; bottom: -360px; height: 480px; pointer-events: none;
+    background: radial-gradient(120% 100% at 50% 0%, rgba(167,243,208,.85) 0%, rgba(110,231,183,.5) 30%, rgba(14,159,110,.24) 55%, transparent 78%);
+    filter: blur(40px);
+  }
+  .xhero::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 260px; z-index: 1; pointer-events: none;
+    background: linear-gradient(to bottom,
+      transparent 0%,
+      rgba(255,255,255,.04) 22%,
+      rgba(255,255,255,.22) 45%,
+      rgba(255,255,255,.55) 68%,
+      rgba(255,255,255,.85) 86%,
+      var(--bg) 100%);
+  }
+  .xhero-inner {
+    position: relative; z-index: 2; max-width: 860px; margin-inline: auto;
+    display: flex; flex-direction: column; align-items: center; text-align: center; gap: 26px;
+  }
+  .xhero-badge {
+    position: relative; display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14);
+    padding: 9px 16px 9px 20px; border-radius: 999px;
+    font-family: var(--sans); font-size: 12.5px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
+    color: rgba(234,244,239,.85);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    transition: border-color .25s var(--ease), background .25s var(--ease), transform .25s var(--ease);
+  }
+  .xhero-badge:hover { border-color: rgba(110,231,183,.4); background: rgba(255,255,255,.1); transform: translateY(-1px); }
+  .xhero-badge-label { position: relative; z-index: 1; }
+  .xhero-badge-beam {
+    position: absolute; inset: 0; border-radius: inherit; padding: 1.5px; pointer-events: none; overflow: hidden;
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor; mask-composite: exclude;
+  }
+  .xhero-badge-beam::before {
+    content: ""; position: absolute; inset: -100%;
+    background: conic-gradient(from 0deg, transparent 0%, transparent 72%, #eafff5 84%, #6ee7b7 93%, transparent 100%);
+    animation: xhero-beam-spin 2.6s linear infinite;
+    transform-origin: center;
+  }
+  @keyframes xhero-beam-spin { to { transform: rotate(360deg); } }
+  @media (prefers-reduced-motion: reduce) { .xhero-badge-beam::before { animation: none; } }
+  .xhero-title {
+    margin: 0; font-family: var(--sans); font-weight: 800; font-size: clamp(2.7rem, 7.4vw, 5.6rem);
+    line-height: 1.03; letter-spacing: -.03em;
+    background: linear-gradient(180deg, #ffffff 0%, #c3d3cc 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .xhero-title em {
+    font-style: normal;
+    background: linear-gradient(180deg, #a7f3d0, #34d399);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .xhero-subtitle { margin: 0; max-width: 600px; font-family: var(--sans); font-size: clamp(1.05rem, 1.8vw, 1.25rem); line-height: 1.6; color: rgba(196,210,204,.85); }
+  .xhero-inner .hero-actions { justify-content: center; margin-top: 4px; }
+  .xhero-inner .btn-primary {
+    padding: 15px 30px; font-size: 15.5px; border-radius: 12px;
+    box-shadow: 0 0 0 1px rgba(255,255,255,.18), 0 16px 36px -10px rgba(14,159,110,.6), inset 0 1px 0 rgba(255,255,255,.3);
+  }
+  .xhero-inner .btn-primary:hover { box-shadow: 0 0 0 1px rgba(255,255,255,.3), 0 20px 42px -10px rgba(14,159,110,.65), inset 0 1px 0 rgba(255,255,255,.3); }
+  .xhero-inner .btn-ghost { color: #fff; border-color: rgba(255,255,255,.24); background: rgba(255,255,255,.04); border-radius: 12px; }
+  .xhero-inner .btn-ghost:hover { border-color: #fff; background: rgba(255,255,255,.1); }
+  .xhero-note { margin-top: 4px; color: rgba(196,210,204,.8); }
+  .xhero-note svg { color: #6ee7b7; }
 
-  .visually-hidden { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
-  @keyframes nudge { 0%,100% { transform: translateY(0); } 50% { transform: translateY(4px); } }
+  /* Floating thumbnails of real client sites, flanking the headline */
+  .xhero-float {
+    position: absolute; z-index: 1; width: clamp(105px, calc((100% - 860px) / 2 - 86px), 215px);
+    border-radius: 14px; overflow: hidden; background: #0d1f19;
+    border: 1px solid rgba(255,255,255,.16);
+    box-shadow: 0 24px 50px -18px rgba(0,0,0,.65);
+    animation: xhero-float-drift 7s ease-in-out infinite;
+    transition: opacity .3s var(--ease);
+  }
+  .xhero-float--1 { left: 20px; top: 12%; rotate: -7deg; animation-delay: -1.2s; }
+  .xhero-float--2 { right: 20px; top: 16%; rotate: 6deg; animation-delay: -3.4s; }
+  .xhero-float--3 { left: 20px; top: 50%; rotate: -4deg; animation-delay: -5.6s; }
+  .xhero-float--4 { right: 20px; top: 50%; rotate: 5deg; animation-delay: -2.4s; }
+  .xhero-float--3, .xhero-float--4 { opacity: .8; }
+  .xhero-float--featured {
+    z-index: 2; width: clamp(150px, calc((100% - 860px) / 2 - 65px), 320px);
+    border-color: rgba(110,231,183,.5);
+    box-shadow: 0 30px 64px -16px rgba(0,0,0,.7), 0 0 0 1px rgba(110,231,183,.3), 0 0 46px -6px rgba(110,231,183,.55);
+  }
+  .xhero-float--featured img { opacity: 1; }
+  .xhero-float--featured .xhero-float-domain { color: #eafff5; font-weight: 700; }
+  .xhero-float--featured .xhero-float-bar { background: rgba(110,231,183,.1); border-bottom-color: rgba(110,231,183,.2); }
+  .xhero-float-bar { display: flex; align-items: center; gap: 6px; padding: 8px 10px; background: rgba(255,255,255,.06); border-bottom: 1px solid rgba(255,255,255,.1); }
+  .xhero-float-bar .case-dots i { background: rgba(255,255,255,.28); }
+  .xhero-float-bar .case-dots i:nth-child(3) { background: #6ee7b7; }
+  .xhero-float-domain { font-family: var(--sans); font-size: 10.5px; font-weight: 600; color: rgba(234,244,239,.75); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .xhero-float img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; opacity: .82; }
+  @keyframes xhero-float-drift {
+    0%, 100% { translate: 0 0; }
+    50% { translate: 0 -12px; }
+  }
+  @media (max-width: 1270px) { .xhero-float { display: none; } }
+  @media (prefers-reduced-motion: reduce) { .xhero-badge, .xhero-inner .btn-primary { transition: none; } .xhero-float { animation: none; } }
 
-  .xhero-reveal { position: relative; z-index: 2; background: var(--bg); opacity: 0; visibility: hidden; transition: opacity .7s var(--ease); }
-  .xhero-reveal.show { opacity: 1; visibility: visible; }
-  .xhero-reveal .hero-inner { max-width: 820px; margin-inline: auto; text-align: center; padding: clamp(44px, 7vw, 80px) 0 clamp(30px, 5vw, 56px); }
-  .xhero-reveal .eyebrow { justify-content: center; }
-  .xhero-reveal .eyebrow::before { display: none; }
-  .xhero-reveal .hero-actions { justify-content: center; }
-
-  /* Header legibility while the dark intro is on screen */
+  /* Header legibility while the dark hero is on screen */
   header.over-dark .nlink { color: rgba(255,255,255,.82); }
   header.over-dark .nlink:hover { color: #fff; background: rgba(255,255,255,.1); }
   header.over-dark .brand { color: #fff; }
@@ -367,6 +437,11 @@
   header.over-dark .btn-primary { background: #fff; color: var(--accent-deep); box-shadow: 0 10px 24px -8px rgba(255,255,255,.3); }
   header.over-dark .btn-primary:hover { background: #f0f7f3; transform: translateY(-2px); box-shadow: 0 16px 30px -10px rgba(255,255,255,.35); }
   header.over-dark .menu-btn { color: #fff; background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.24); }
+  header.scrolled.over-dark {
+    background: rgba(7, 25, 19, .58);
+    border-bottom-color: rgba(255,255,255,.1);
+    box-shadow: 0 2px 24px rgba(0,0,0,.28);
+  }
 
   /* ---------- Logos marquee ---------- */
   .logos { padding: 46px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--bg-soft); }
@@ -664,7 +739,7 @@
 
   @media (prefers-reduced-motion: reduce) {
     .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
-    .blob, .marquee-track, .xhero-scroll svg { animation: none !important; }
+    .blob, .marquee-track { animation: none !important; }
     .step .bar i, .eyebrow::before { transition: none !important; }
   }
 
@@ -737,12 +812,13 @@
     /* Kontakt: méně vnořeného odsazení = víc místa pro pole formuláře */
     .contact-inner { padding: 30px 22px; gap: 28px; }
     form.card { padding: 24px 20px; }
-    /* Hero: keep copy compact so it never crowds the video / cue on phones */
-    .xhero-copy { gap: 13px; padding: 0 20px; }
-    .xhero-title { font-size: clamp(2rem, 8.4vw, 2.7rem); }
-    .xhero-subtitle { font-size: .97rem; max-width: 86%; }
-    .xhero-kicker { font-size: 11.5px; letter-spacing: .13em; }
-    .xhero-copy::before { background: radial-gradient(ellipse 88% 58% at 50% 46%, rgba(6,22,17,.8) 0%, rgba(6,22,17,.55) 46%, transparent 78%); }
+    /* Hero: tighten spacing and the glow on phones */
+    .xhero { padding: 130px 0 120px; }
+    .xhero-inner { gap: 20px; padding: 0 20px; }
+    .xhero-title { font-size: clamp(2.1rem, 9vw, 2.8rem); }
+    .xhero-subtitle { font-size: .97rem; max-width: 92%; }
+    .xhero-badge { font-size: 11px; padding: 8px 14px 8px 16px; }
+    .xhero-glow { bottom: -520px; height: 620px; }
   }
 </style>
 </head>
@@ -788,49 +864,59 @@
 
 <main id="hlavni">
 
-<!-- ===================== HERO (scroll-expand) ===================== -->
+<!-- ===================== HERO ===================== -->
 <section class="xhero" id="intro" aria-label="Úvod">
-  <div class="xhero-bg" aria-hidden="true"><div class="xhero-grid"></div></div>
-
-  <div class="xhero-stage">
-    <div class="xhero-copy" id="xCopy">
-      <p class="xhero-kicker">Tvorba a redesign webů</p>
-      <h1 class="xhero-title">Weby, které <em>pilotují</em><br />váš růst</h1>
-      <p class="xhero-subtitle">Navrhuji a přestavuji weby pro firmy a podnikatele — rychlé, elegantní a zaměřené na výsledek.</p>
-    </div>
-
-    <div class="xhero-media" id="xMedia">
-      <div class="xfallback" aria-hidden="true">WebPilot</div>
-      <video autoplay muted loop playsinline preload="auto" aria-hidden="true">
-        <source src="hero.mp4" type="video/mp4" />
-      </video>
-      <div class="xtint" aria-hidden="true"></div>
-      <div class="xhero-cue">
-        <button type="button" class="xhero-scroll" id="xCue">
-          Posuňte a odhalte
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
-        </button>
-      </div>
-    </div>
+  <div class="xhero-bg" aria-hidden="true">
+    <div class="xhero-grid"></div>
+    <div class="xhero-glow"></div>
   </div>
 
-  <div class="xhero-reveal" id="xReveal">
-    <div class="wrap">
-      <div class="hero-inner">
-        <span class="eyebrow reveal in">Tvorba a redesign webů</span>
-        <p class="lead reveal in d1">Navrhuji a přestavuji weby pro firmy a podnikatele — rychlé, elegantní a laděné na jeden cíl: aby vám z návštěvníků dělaly zákazníky.</p>
-        <div class="hero-actions reveal in d2">
-          <a class="btn btn-primary" href="#kontakt">Chci nový web
-            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-          <a class="btn btn-ghost" href="#proces">Jak pracuji</a>
-          <span class="hero-note">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-            Konzultace + návrh webu zdarma
-          </span>
-        </div>
-      </div>
+  <div class="xhero-float xhero-float--1 xhero-float--featured reveal in d1" aria-hidden="true">
+    <div class="xhero-float-bar">
+      <span class="case-dots"><i></i><i></i><i></i></span>
+      <span class="xhero-float-domain">stone-krystal.cz</span>
     </div>
+    <img src="thumb-krystal.jpg" alt="" loading="lazy" decoding="async" />
+  </div>
+  <div class="xhero-float xhero-float--2 xhero-float--featured reveal in d1" aria-hidden="true">
+    <div class="xhero-float-bar">
+      <span class="case-dots"><i></i><i></i><i></i></span>
+      <span class="xhero-float-domain">chataulubatka.cz</span>
+    </div>
+    <img src="thumb-chata.jpg" alt="" loading="lazy" decoding="async" />
+  </div>
+  <div class="xhero-float xhero-float--3 reveal in d3" aria-hidden="true">
+    <div class="xhero-float-bar">
+      <span class="case-dots"><i></i><i></i><i></i></span>
+      <span class="xhero-float-domain">barbershoplouny.cz</span>
+    </div>
+    <img src="thumb-barbershop.jpg" alt="" loading="lazy" decoding="async" />
+  </div>
+  <div class="xhero-float xhero-float--4 reveal in d3" aria-hidden="true">
+    <div class="xhero-float-bar">
+      <span class="case-dots"><i></i><i></i><i></i></span>
+      <span class="xhero-float-domain">proseccovsrdci.cz</span>
+    </div>
+    <img src="thumb-prosecco.jpg" alt="" loading="lazy" decoding="async" />
+  </div>
+
+  <div class="wrap xhero-inner">
+    <a href="#kontakt" class="xhero-badge reveal in">
+      <span class="xhero-badge-beam" aria-hidden="true"></span>
+      <span class="xhero-badge-label">Tvorba a redesign webů</span>
+    </a>
+    <h1 class="xhero-title reveal in d1">Weby, které <em>pilotují</em><br />váš růst</h1>
+    <p class="xhero-subtitle reveal in d2">Navrhuji a přestavuji weby pro firmy a podnikatele — rychlé, elegantní a zaměřené na výsledek.</p>
+    <div class="hero-actions reveal in d3">
+      <a class="btn btn-primary" href="#kontakt">Chci nový web
+        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a class="btn btn-ghost" href="#proces">Jak pracuji</a>
+    </div>
+    <span class="hero-note xhero-note reveal in d3">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+      Konzultace a návrh webu ZDARMA
+    </span>
   </div>
 </section>
 
@@ -840,8 +926,8 @@
     <p class="cap">Důvěřují mi firmy i podnikatelé napříč obory</p>
     <div class="marquee">
       <div class="marquee-track">
-        <span>Prosecco v srdci</span><span>Martina Vysloužilová photography</span><span>Behyshop</span><span>Goodfellas Barber Shop Louny</span><span>Krystal</span>
-        <span>Prosecco v srdci</span><span>Martina Vysloužilová photography</span><span>Behyshop</span><span>Goodfellas Barber Shop Louny</span><span>Krystal</span>
+        <span>Prosecco v srdci</span><span>Martina Vysloužilová photography</span><span>Behyshop</span><span>Goodfellas Barber Shop Louny</span><span>Krystal</span><span>Chata u Lubátka</span>
+        <span>Prosecco v srdci</span><span>Martina Vysloužilová photography</span><span>Behyshop</span><span>Goodfellas Barber Shop Louny</span><span>Krystal</span><span>Chata u Lubátka</span>
       </div>
     </div>
   </div>
@@ -1066,6 +1152,29 @@
           <div>
             <b>Kateřina Ralbovská</b>
             <span>Prosecco v srdci</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-card reveal d2">
+        <a class="case-browser" href="https://www.stone-krystal.cz/" target="_blank" rel="noopener noreferrer" aria-label="Otevřít web stone-krystal.cz">
+          <span class="case-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="case-domain">stone-krystal.cz</span>
+          <span class="case-stars" aria-label="Hodnocení 5 z 5 hvězdiček">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.6 7.1.7-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7-5.4-4.7 7.1-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.6 7.1.7-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7-5.4-4.7 7.1-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.6 7.1.7-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7-5.4-4.7 7.1-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.6 7.1.7-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7-5.4-4.7 7.1-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.6 7.1.7-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7-5.4-4.7 7.1-.7z"/></svg>
+          </span>
+          <svg class="case-browser-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>
+        <p class="case-quote">Musím se přiznat, že jste mě fakt překvapil. Jsem moc rád, že jsem si vybral právě vás. Odvedl jste naprosto skvělou práci a všichni, kdo viděli moje nové webovky, je moc chválili. Díky za skvělou práci a hlavně za váš přístup. Moc vám za to děkuji a jsem za to opravdu vděčný.</p>
+        <div class="case-person">
+          <img class="case-avatar" src="recenze-jaroslav.png" alt="Jaroslav Jedlička" loading="lazy" decoding="async" />
+          <div>
+            <b>Jaroslav Jedlička</b>
+            <span>Krystal</span>
           </div>
         </div>
       </div>
@@ -1330,98 +1439,18 @@
     });
   });
 
-  /* --- Scroll-expand hero (vanilla port of ScrollExpandMedia) --- */
-  (function initXHero() {
+  /* --- Dark hero: keep header legible while it's over the dark hero band --- */
+  (function initHeroHeader() {
     var xhero = document.querySelector(".xhero");
     if (!xhero) return;
-    var media = document.getElementById("xMedia");
-    var xvideo = media.querySelector("video");
-    var bg = xhero.querySelector(".xhero-bg");
-    var tint = xhero.querySelector(".xtint");
-    var copyEl = document.getElementById("xCopy");
-    var cueEl = document.getElementById("xCue");
-    var reveal = document.getElementById("xReveal");
-
-    var progress = 0, expanded = false, touchStartY = 0;
-    var isMobile = window.innerWidth < 768;
-
-    function apply() {
-      // Video starts large (a backdrop for the text) and expands toward full-bleed on scroll.
-      var w0 = isMobile ? 90 : 76, w1 = isMobile ? 96 : 94;
-      var h0 = isMobile ? 56 : 58, h1 = isMobile ? 84 : 88;
-      media.style.width = (w0 + progress * (w1 - w0)) + "vw";
-      media.style.height = (h0 + progress * (h1 - h0)) + "vh";
-      if (bg) bg.style.opacity = String(1 - progress);
-      if (tint) tint.style.opacity = String(1 - progress * 0.6);
-      if (copyEl) {
-        copyEl.style.opacity = String(Math.max(0, 1 - progress * 1.5));
-        copyEl.style.transform = "translateY(" + (-progress * 44) + "px)";
-      }
-      var cueX = progress * (isMobile ? 40 : 30);
-      var cueOpacity = Math.max(0, 1 - progress * 1.6);
-      if (cueEl) { cueEl.style.transform = "translateX(" + cueX + "vw)"; cueEl.style.opacity = cueOpacity; }
+    if (reduce || !("IntersectionObserver" in window)) {
+      header.classList.add("over-dark");
+      return;
     }
-
-    function setExpanded(v) {
-      expanded = v;
-      header.classList.toggle("over-dark", !v);
-      if (v) { progress = 1; apply(); reveal.classList.add("show"); }
-      else { reveal.classList.remove("show"); }
-    }
-
-    function update(delta) {
-      if (expanded) return;
-      progress = Math.min(Math.max(progress + delta, 0), 1);
-      apply();
-      if (progress >= 1) setExpanded(true);
-      else reveal.classList.remove("show");
-    }
-
-    function onWheel(e) {
-      if (expanded && e.deltaY < 0 && window.scrollY <= 5) { setExpanded(false); e.preventDefault(); return; }
-      if (!expanded) { e.preventDefault(); update(e.deltaY * 0.0009); }
-    }
-    function onTouchStart(e) { touchStartY = e.touches[0].clientY; }
-    function onTouchMove(e) {
-      if (!touchStartY) return;
-      var y = e.touches[0].clientY, dy = touchStartY - y;
-      if (expanded && dy < -20 && window.scrollY <= 5) { setExpanded(false); e.preventDefault(); return; }
-      if (!expanded) { e.preventDefault(); update(dy * (dy < 0 ? 0.008 : 0.005)); touchStartY = y; }
-    }
-    function onTouchEnd() { touchStartY = 0; }
-    function lockScroll() { if (!expanded) window.scrollTo(0, 0); }
-
-    // Keep the muted hero video playing (autoplay can be blocked until JS nudges it).
-    function playVideo() { var p = xvideo.play(); if (p && p.catch) p.catch(function () {}); }
-    xvideo.addEventListener("error", function () { media.classList.add("no-video"); }, true);
-    xvideo.addEventListener("loadeddata", function () { media.classList.remove("no-video"); playVideo(); });
-    xvideo.addEventListener("canplay", playVideo);
-    playVideo();
-
-    // Reduced motion: skip the scroll hijack, present the hero expanded — but still show the video.
-    if (reduce) { setExpanded(true); apply(); return; }
-
-    header.classList.add("over-dark");
-    apply();
-
-    window.addEventListener("wheel", onWheel, { passive: false });
-    window.addEventListener("touchstart", onTouchStart, { passive: false });
-    window.addEventListener("touchmove", onTouchMove, { passive: false });
-    window.addEventListener("touchend", onTouchEnd);
-    window.addEventListener("scroll", lockScroll);
-    window.addEventListener("resize", function () { isMobile = window.innerWidth < 768; apply(); });
-
-    // Click the cue to complete the reveal (mouse users / discoverability).
-    if (cueEl) cueEl.addEventListener("click", function () { setExpanded(true); window.scrollTo(0, 0); });
-
-    // Never trap the user: any in-page link or keyboard navigation finishes the intro.
-    document.addEventListener("click", function (e) {
-      var a = e.target.closest && e.target.closest('a[href^="#"]');
-      if (a && !expanded) setExpanded(true);
-    }, true);
-    document.addEventListener("keydown", function (e) {
-      if (!expanded && ["Tab", "Enter", " ", "PageDown", "End", "ArrowDown"].indexOf(e.key) !== -1) setExpanded(true);
-    });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { header.classList.toggle("over-dark", e.isIntersecting); });
+    }, { threshold: 0, rootMargin: "-74px 0px 0px 0px" });
+    io.observe(xhero);
   })();
 
   /* --- Bespoke micro-interactions: cursor spotlight on cards + magnetic buttons --- */
