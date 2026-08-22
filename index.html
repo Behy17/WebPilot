@@ -1178,6 +1178,29 @@
           </div>
         </div>
       </div>
+
+      <div class="case-card reveal d3">
+        <a class="case-browser" href="https://www.chataulubatka.cz/" target="_blank" rel="noopener noreferrer" aria-label="Otevřít web chataulubatka.cz">
+          <span class="case-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="case-domain">chataulubatka.cz</span>
+          <span class="case-stars" aria-label="Hodnocení 5 z 5 hvězdiček">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.6 7.1.7-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7-5.4-4.7 7.1-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.6 7.1.7-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7-5.4-4.7 7.1-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.6 7.1.7-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7-5.4-4.7 7.1-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.6 7.1.7-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7-5.4-4.7 7.1-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.6 7.1.7-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7-5.4-4.7 7.1-.7z"/></svg>
+          </span>
+          <svg class="case-browser-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>
+        <p class="case-quote">Pro naši roubenku jsme hledaly partnera, který vytvoří reprezentativní web a pomůže nám získat více poptávek na pronájem. WebPilot předčil naše očekávání! Oceňujeme především rychlou a profesionální komunikaci pana Běhavého, srozumitelně vysvětlený celý proces spolupráce i dodržení předem dohodnuté ceny. Web byl dokončen dokonce s časovou rezervou a s finálním výsledkem jsme maximálně spokojeni. Velkým benefitem je také technická podpora po spuštění webu — vše, co jsme potřebovaly, nám bylo ochotně vysvětleno nebo upraveno. Děkujeme WebPilotu za skvělou práci a profesionální přístup. Doporučujeme 10 z 10!</p>
+        <div class="case-person">
+          <img class="case-avatar" src="recenze-lucie.png?v=3" alt="Lucie Dostálová" loading="lazy" decoding="async" />
+          <div>
+            <b>Lucie Dostálová</b>
+            <span>Chata u Lubátka</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1240,8 +1263,7 @@
           </div>
         </div>
 
-        <form class="card" id="poptavka" novalidate action="https://formsubmit.co/info@web-pilot.cz" method="POST">
-          <input type="hidden" name="_subject" value="Nová poptávka z webu WebPilot" />
+        <form class="card" id="poptavka" novalidate action="/.netlify/functions/contact" method="POST">
           <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" />
           <div class="field">
             <span class="field-label">O co máte zájem</span>
@@ -1399,7 +1421,7 @@
     });
   });
 
-  /* --- Contact form (odesílá přes FormSubmit AJAX na info@web-pilot.cz) --- */
+  /* --- Contact form (odesílá přes Netlify Function na SMTP Seznamu, info@web-pilot.cz) --- */
   var form = document.getElementById("poptavka");
   var ok = document.getElementById("formOk");
   var btnHtml = 'Odeslat nezávaznou poptávku <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
@@ -1417,10 +1439,12 @@
     btn.style.opacity = ".7";
     btn.textContent = "Odesílám…";
     ok.classList.remove("show", "error");
-    fetch("https://formsubmit.co/ajax/info@web-pilot.cz", {
+    var payload = {};
+    new FormData(form).forEach(function (value, key) { payload[key] = value; });
+    fetch("/.netlify/functions/contact", {
       method: "POST",
-      headers: { "Accept": "application/json" },
-      body: new FormData(form)
+      headers: { "Accept": "application/json", "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
     }).then(function (res) {
       if (!res.ok) throw new Error("HTTP " + res.status);
       return res.json();
