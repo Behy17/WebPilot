@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="theme-color" content="#0e9f6e" />
 
-<title>Tvorba a redesign webů pro firmy a podnikatele | WebPilot</title>
+<title>WebPilot | Tvorba a redesign webů pro firmy a podnikatele</title>
 <meta name="description" content="Navrhuji a přestavuji weby pro firmy a podnikatele — rychlé, elegantní a měřitelné weby, které přinášejí poptávky. Nezávazná konzultace i návrh webu zdarma." />
 <meta name="author" content="Vladimír Běhavý" />
 <meta name="keywords" content="tvorba webů, redesign webu, web na míru, webdesign, weby pro firmy, weby pro podnikatele, SEO, WebPilot, Most" />
@@ -392,7 +392,7 @@
     background: linear-gradient(180deg, #a7f3d0, #34d399);
     -webkit-background-clip: text; background-clip: text; color: transparent;
   }
-  .xhero-subtitle { margin: 0; max-width: 600px; font-family: var(--sans); font-size: clamp(1.05rem, 1.8vw, 1.25rem); line-height: 1.6; color: rgba(196,210,204,.85); }
+  .xhero-subtitle { margin: 0; max-width: 680px; font-family: var(--sans); font-size: clamp(1.05rem, 1.8vw, 1.25rem); line-height: 1.6; color: rgba(196,210,204,.85); }
   .xhero-inner .hero-actions { justify-content: center; margin-top: 4px; }
   .xhero-inner .btn-primary {
     padding: 15px 30px; font-size: 15.5px; border-radius: 12px;
@@ -814,6 +814,12 @@
     .xhero-subtitle { font-size: .97rem; max-width: 92%; }
     .xhero-badge { font-size: 11px; padding: 8px 14px 8px 16px; }
     .xhero-glow { bottom: -520px; height: 620px; }
+  }
+
+  /* Hero: on short desktop/laptop viewports, tighten padding so the CTA note stays visible without scrolling */
+  @media (min-width: 721px) and (max-height: 820px) {
+    .xhero { padding: 130px 0 130px; }
+    .xhero-inner { gap: 18px; }
   }
 </style>
 </head>
