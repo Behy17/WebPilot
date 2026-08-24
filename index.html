@@ -100,17 +100,27 @@
     {
       "@type": "Question",
       "name": "Jak mám jistotu, že web dopadne dobře?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Výsledek vidíte dřív, než se rozhodnete. Připravím vám nezávazný návrh úvodní stránky zdarma — teprve když se vám líbí, pokračujeme. K tomu máte pevnou cenu předem i daný termín, takže do ničeho nejdete naslepo." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Nezávazný návrh úvodní stránky zdarma uvidíte ještě před rozhodnutím. Pokračujeme až ve chvíli, kdy se vám návrh líbí. Navíc získáte pevnou cenu i termín realizace předem. Bez rizika a nepříjemných překvapení." }
     },
     {
       "@type": "Question",
       "name": "Co znamená „návrh zdarma“?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Zdarma a nezávazně připravím vizuální návrh webu, abyste viděli směr a styl ještě před objednávkou. Kompletní web, podstránky a další práce jsou už součástí placené zakázky podle dohodnutého rozsahu." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Než se rozhodnete, připravím vám nezávazný vizuální návrh webu, abyste si mohli udělat představu o jeho směru a stylu. Kompletní tvorba webu, podstránek a dalších prvků je následně realizována jako placená zakázka dle dohodnutého rozsahu." }
     },
     {
       "@type": "Question",
       "name": "Kolik stojí vytvoření webu?",
       "acceptedAnswer": { "@type": "Answer", "text": "Kompletní web pro firmy a podnikatele začíná na pevné ceně, kterou znáte předem. Cenu služeb najdete v ceníku." }
+    },
+    {
+      "@type": "Question",
+      "name": "Jak probíhá platba za web?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Nejprve dostanete nezávazný návrh webu zdarma. Pokud se vám bude líbit a budete chtít pokračovat, platí se 50 % záloha na zahájení prací a zbylých 50 % doplatíte až po dokončení a předání hotového webu." }
+    },
+    {
+      "@type": "Question",
+      "name": "Je v ceně i hosting a doména?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Hosting webu je vždy součástí ceny. Doménu si buď zajistíte sami, nebo ji vyřešíme společně — poradím s výběrem i registrací." }
     },
     {
       "@type": "Question",
@@ -391,8 +401,12 @@
   .xhero-inner .btn-primary:hover { box-shadow: 0 0 0 1px rgba(255,255,255,.3), 0 20px 42px -10px rgba(14,159,110,.65), inset 0 1px 0 rgba(255,255,255,.3); }
   .xhero-inner .btn-ghost { color: #fff; border-color: rgba(255,255,255,.24); background: rgba(255,255,255,.04); border-radius: 12px; }
   .xhero-inner .btn-ghost:hover { border-color: #fff; background: rgba(255,255,255,.1); }
-  .xhero-note { margin-top: 4px; color: rgba(196,210,204,.8); }
-  .xhero-note svg { color: #6ee7b7; }
+  .xhero-note {
+    margin-top: 10px; padding: 9px 18px 9px 14px; border-radius: 999px;
+    background: rgba(110,231,183,.12); border: 1px solid rgba(110,231,183,.4);
+    color: #eafff5; font-weight: 700; font-size: 14.5px; letter-spacing: .01em;
+  }
+  .xhero-note svg { width: 18px; height: 18px; color: #6ee7b7; }
 
   /* Floating thumbnails of real client sites, flanking the headline */
   .xhero-float {
@@ -523,47 +537,19 @@
   .about-visual { position: relative; }
   .about-photo {
     width: 100%; max-width: 380px; aspect-ratio: 4 / 5; object-fit: cover; object-position: center top;
-    border-radius: 24px; margin-bottom: 36px; border: 1px solid rgba(14,159,110,.15);
+    border-radius: 24px; border: 1px solid rgba(14,159,110,.15);
     box-shadow: 0 16px 48px rgba(0,0,0,.12), inset 0 1px 0 rgba(255,255,255,.2);
     transition: transform .4s var(--ease), box-shadow .4s var(--ease), border-color .4s var(--ease);
     display: block;
   }
   .about-photo:hover { transform: scale(1.02) translateY(-2px); border-color: rgba(14,159,110,.4); box-shadow: 0 20px 60px rgba(14, 159, 110, .14), inset 0 1px 0 rgba(255,255,255,.2); }
-  .about-card {
-    position: relative; background: #fff; border: 1px solid var(--line); border-radius: var(--radius-lg);
-    padding: 30px; box-shadow: 0 1px 2px rgba(10,21,18,.04), 0 18px 44px -22px rgba(10,21,18,.16);
-    overflow: hidden;
-  }
-  .about-card::before {
-    content: ""; position: absolute; inset: 0; pointer-events: none;
-    background: radial-gradient(120% 90% at 100% 0%, rgba(14,159,110,.07), transparent 55%);
-  }
-  .about-card > * { position: relative; }
-  .about-card .row { display:flex; align-items:center; gap:14px; }
-  .about-card .av {
-    width: 52px; height: 52px; border-radius: 15px; flex-shrink:0;
-    background: linear-gradient(140deg, var(--accent), var(--accent-deep));
-    display:grid; place-items:center; color:#fff; font-family: var(--serif); font-weight:600; font-size: 1.05rem;
-    box-shadow: 0 8px 18px -8px var(--accent-glow), inset 0 1px 0 rgba(255,255,255,.28);
-  }
-  .about-card .row .info { display: flex; flex-direction: column; gap: 3px; }
-  .about-card .row b { display: inline-flex; align-items: center; gap: 6px; font-family: var(--sans); font-size: 16px; font-weight: 700; letter-spacing: -.01em; }
-  .about-card .row b .verified { width: 17px; height: 17px; flex-shrink: 0; }
-  .about-card .row span { font-size: 13px; color: var(--muted); font-weight: 500; }
-  .about-skills { margin-top: 22px; padding-top: 22px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 8px; }
-  .about-skills span { font-family: var(--sans); font-size: 12.5px; font-weight: 600; padding: 6px 13px; border-radius: 999px; background: var(--bg-tint); color: var(--accent-deep); border: 1px solid rgba(14,159,110,.16); transition: transform .2s var(--ease), background .2s; }
-  .about-skills span:hover { transform: translateY(-2px); background: #d9fbe9; }
-  .about-float {
-    margin-top: 24px; display: flex; align-items: center; gap: 14px;
-    background: linear-gradient(135deg, var(--dark), var(--dark-2)); color:#fff;
-    border-radius: 16px; padding: 16px 20px; box-shadow: 0 14px 30px -16px rgba(7,19,16,.55);
-  }
-  .about-float .fl-ic { width: 38px; height: 38px; border-radius: 11px; flex-shrink: 0; display: grid; place-items: center; background: rgba(110,231,183,.14); color: #6ee7b7; }
-  .about-float .fl-ic svg { width: 20px; height: 20px; }
-  .about-float .fl-txt { display: flex; flex-direction: column; line-height: 1.15; }
-  .about-float .n { font-family: var(--serif); font-size: 1.5rem; font-weight: 600; color:#6ee7b7; }
-  .about-float .t { font-size: 12.5px; color:#9fb4ab; }
   .about-copy .lead { margin-top: 20px; }
+  .about-why {
+    position: relative; margin-top: 26px; padding: 22px 26px 22px 28px;
+    background: var(--bg-tint); border-radius: var(--radius); border-left: 3px solid var(--accent);
+  }
+  .about-why p { font-family: var(--serif); font-size: 1.05rem; font-weight: 500; line-height: 1.55; color: var(--accent-ink); }
+  .about-why p strong { font-weight: 700; }
   .about-list { margin-top: 26px; display: grid; gap: 16px; }
   .about-list .it { display:flex; gap: 14px; }
   .about-list .it .ic { width: 40px; height:40px; border-radius: 11px; background: var(--bg-tint); color: var(--accent-deep); display:grid; place-items:center; flex-shrink:0; }
@@ -629,6 +615,15 @@
   .contact .eyebrow { color: #6ee7b7; }
   .contact h2 { color:#fff; font-size: clamp(1.9rem, 3.6vw, 2.7rem); margin-top: 16px; }
   .contact .lead { color:#9fb4ab; margin-top: 18px; }
+  .contact-capacity {
+    margin-top: 26px; display: flex; align-items: center; gap: 14px;
+    background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14);
+    border-radius: 16px; padding: 16px 20px;
+  }
+  .contact-capacity .ic { width: 42px; height: 42px; border-radius: 12px; background: rgba(110,231,183,.14); color: #6ee7b7; display: grid; place-items: center; flex-shrink: 0; }
+  .contact-capacity .ic svg { width: 20px; height: 20px; }
+  .contact-capacity p { font-size: 14.5px; color: #cdeadd; line-height: 1.5; }
+  .contact-capacity strong { color: #fff; }
   .contact-side { margin-top: 30px; display: grid; gap: 18px; }
   .contact-side .ci { display:flex; gap: 13px; align-items:center; }
   .contact-side .ci .ic { width: 42px; height:42px; border-radius: 12px; background: rgba(255,255,255,.06); display:grid; place-items:center; color:#6ee7b7; flex-shrink:0; }
@@ -906,7 +901,7 @@
       <span class="xhero-badge-label">Tvorba a redesign webů</span>
     </a>
     <h1 class="xhero-title reveal in d1">Weby, které <em>pilotují</em><br />váš růst</h1>
-    <p class="xhero-subtitle reveal in d2">Navrhuji a přestavuji weby pro firmy a podnikatele — rychlé, elegantní a zaměřené na výsledek.</p>
+    <p class="xhero-subtitle reveal in d2">Navrhuji a modernizuji weby pro firmy i podnikatele. Rychlé, elegantní a funkční stránky, které přitahují zákazníky a podporují váš růst.</p>
     <div class="hero-actions reveal in d3">
       <a class="btn btn-primary" href="#kontakt">Chci nový web
         <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -923,7 +918,7 @@
 <!-- ===================== LOGOS ===================== -->
 <section class="logos" aria-label="Klienti">
   <div class="wrap">
-    <p class="cap">Důvěřují mi firmy i podnikatelé napříč obory</p>
+    <p class="cap">Důvěřují mi firmy a podnikatelé napříč obory</p>
     <div class="marquee">
       <div class="marquee-track">
         <span>Prosecco v srdci</span><span>Martina Vysloužilová photography</span><span>Behyshop</span><span>Goodfellas Barber Shop Louny</span><span>Krystal</span><span>Chata u Lubátka</span>
@@ -937,43 +932,43 @@
 <section class="block" id="sluzby">
   <div class="wrap">
     <div class="sec-head reveal">
-      <h2 class="h2">Kompletní péče o váš web — od strategie, po spuštění, až po následnou péči.</h2>
-      <p class="lead">Ať začínáte na zelené louce, nebo máte web, který už neprodává, postarám se o celý proces. Vy řešíte byznys, já web.</p>
+      <h2 class="h2">Kompletní péče o váš web.</h2>
+      <p class="lead">Od strategie přes realizaci až po dlouhodobou správu vytvořím web, který podporuje váš růst a přináší nové poptávky. Ať začínáte od nuly, nebo váš současný web nefunguje, provedu vás celým procesem — profesionálně, efektivně a s péčí i po spuštění.</p>
     </div>
 
     <div class="svc-grid">
       <div class="svc feature reveal">
         <div class="svc-num">01</div>
         <h3>Tvorba webu na míru</h3>
-        <p>Navrhnu a naprogramuji web přesně pro vaše cíle. Strategie, moderní design, copywriting, který prodává, a technické zázemí, na kterém web poletí. Bez šablon, které vypadají jako všechny ostatní.</p>
+        <p>Navrhnu a naprogramuji web, který splní vaše cíle. Od strategie přes moderní design a prodejní copywriting až po rychlé technické řešení. Bez šablon. Bez kompromisů. Váš web bude jedinečný, funkční a připravený růst s vaším podnikáním.</p>
         <div class="tags"><span>UX a design</span><span>Copywriting</span><span>Vývoj na míru</span><span>SEO základy</span><span>Napojení na systémy</span></div>
       </div>
 
       <div class="svc reveal d1">
         <div class="svc-num">02</div>
-        <h3>Redesign a oživení</h3>
-        <p>Máte web, který zestárl nebo nepřináší poptávky? Zmodernizuji vzhled, zrychlím načítání a přeskládám obsah tak, aby vedl k akci — bez ztráty toho, co funguje.</p>
+        <h3>Redesign</h3>
+        <p>Modernizuji vzhled vašeho webu, zrychlím jeho načítání a upravím obsah tak, aby návštěvníky vedl k akci — bez ztráty toho, co už funguje.</p>
         <div class="tags"><span>Audit</span><span>Rebranding</span><span>Zrychlení</span></div>
       </div>
 
       <div class="svc reveal d2">
         <div class="svc-num">03</div>
         <h3>Web pro živnostníky</h3>
-        <p>Jednoduchý, efektivní web pro drobné podnikatele a živnostníky. Postavím vám přehledný web, který vás představuje online a přináší místní klienty.</p>
+        <p>Jednoduchý, přehledný a efektivní web pro drobné podnikatele a živnostníky. Představte své služby online a oslovte více místních klientů. Váš web. Vaše vizitka. Více zákazníků.</p>
         <div class="tags"><span>Jednoduché řešení</span><span>Dosah klientů</span><span>Snadná správa</span></div>
       </div>
 
       <div class="svc reveal d1">
         <div class="svc-num">04</div>
         <h3>SEO a výkon</h3>
-        <p>Web, který nikdo nenajde, neprodává. Technické SEO a rychlost — postarám se, aby vás Google i zákazníci našli.</p>
+        <p>Zajistím technické SEO a rychlost vašeho webu, aby vás Google i zákazníci snadno našli.</p>
         <div class="tags"><span>SEO</span><span>Analytika</span><span>Rychlost</span></div>
       </div>
 
       <div class="svc reveal d2">
         <div class="svc-num">05</div>
-        <h3>Správa a péče</h3>
-        <p>Po spuštění vás nenechám napospas. Aktualizace, zálohy, bezpečnost, drobné úpravy i konzultace — váš web zůstane svěží a v kondici.</p>
+        <h3>Následná správa a péče</h3>
+        <p>Po spuštění vás nenechám napospas. Zajistím aktualizace, zálohy, bezpečnost, drobné úpravy i odborné konzultace. Váš web zůstane svěží, bezpečný a spolehlivý.</p>
         <div class="tags"><span>Údržba</span><span>Zálohy</span><span>Podpora</span></div>
       </div>
     </div>
@@ -985,7 +980,7 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <h2 class="h2">Čtyři jasné kroky. Žádné překvapení.</h2>
-      <p class="lead">Od prvního hovoru po spuštění vás provedu transparentním procesem s pevnými termíny a průběžnými náhledy.</p>
+      <p class="lead">Od prvního hovoru až po spuštění vás provedu transparentním procesem s pevnými termíny a průběžnými náhledy. Vždy budete mít jasno, co se právě děje.</p>
     </div>
 
     <div class="steps">
@@ -993,25 +988,25 @@
         <div class="bar"><i></i></div>
         <div class="no">01</div>
         <h4>Poznání a strategie</h4>
-        <p>Projdu vaše cíle, zákazníky a konkurenci. Domluvíme, co má web přinášet, a řeknu vám, jak to změřím.</p>
+        <p>Analyzuji vaše cíle, zákazníky i konkurenci. Společně nastavíme, co má váš web přinášet — a ukážu vám, jak jeho výsledky měřit.</p>
       </div>
       <div class="step reveal d1">
         <div class="bar"><i></i></div>
         <div class="no">02</div>
         <h4>Design a obsah</h4>
-        <p>Navrhnu vzhled i strukturu a napíšu texty. Vše schvalujete v interaktivním náhledu.</p>
+        <p>Navrhnu vzhled, strukturu i texty. Vše pohodlně sledujete v náhledu.</p>
       </div>
       <div class="step reveal d2">
         <div class="bar"><i></i></div>
         <div class="no">03</div>
         <h4>Vývoj a ladění</h4>
-        <p>Web naprogramuji, otestuji na všech zařízeních a vyladím rychlost i SEO.</p>
+        <p>Vytvořím vám moderní web, otestuji ho na všech zařízeních a vyladím jeho rychlost i SEO. Získejte web, který skvěle funguje, rychle se načítá a přivádí nové zákazníky.</p>
       </div>
       <div class="step reveal d3">
         <div class="bar"><i></i></div>
         <div class="no">04</div>
         <h4>Spuštění a růst</h4>
-        <p>Web nasadím, zaškolím vás a hlídám výsledky. Dál pomáhám s růstem.</p>
+        <p>Nasadím váš web a budu hlídat jeho výsledky. Pomohu vám také s jeho dlouhodobým růstem.</p>
       </div>
     </div>
   </div>
@@ -1023,13 +1018,13 @@
     <div class="sec-head center reveal">
       <span class="eyebrow">Ceník</span>
       <h2 class="h2">Transparentní balíčky bez skrytých poplatků.</h2>
-      <p class="lead">Vyberte si podle fáze vašeho podnikání. Cenu vždy potvrdím předem — dopředu víte, co dostanete.</p>
+      <p class="lead">Vyberte si službu podle fáze svého podnikání. Cenu vždy potvrdím předem, takže přesně víte, co získáte a kolik zaplatíte.</p>
     </div>
 
     <div class="price-grid">
       <div class="plan reveal">
         <h3>Start</h3>
-        <p class="plan-sub">Jednostránkový projekt pro představení služby, akci nebo kampaň s důrazem na poptávku.</p>
+        <p class="plan-sub">Jednostránkový web pro představení vaší služby, akce nebo kampaně. Moderní, responzivní a zaměřený na získávání poptávek.</p>
         <div class="price">10&nbsp;000&nbsp;<small>Kč</small></div>
         <ul>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Konzultace a strategie</li>
@@ -1044,7 +1039,7 @@
       <div class="plan pop reveal d1">
         <span class="badge">Nejčastěji volená</span>
         <h3>Web na míru</h3>
-        <p class="plan-sub">Kompletní web, který unese úroveň vašeho podniku a přináší výsledky.</p>
+        <p class="plan-sub">Váš podnik si zaslouží web, který působí profesionálně, buduje důvěru a přináší výsledky. Postarám se o moderní design, funkčnost i strategii, která promění návštěvníky v zákazníky.</p>
         <div class="price">20&nbsp;000&nbsp;<small>Kč</small></div>
         <ul>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Vícestránkový web na míru</li>
@@ -1081,30 +1076,16 @@
   <div class="wrap about-grid">
     <div class="about-visual reveal">
       <img src="vladimir.png" alt="Vladimír Běhavý — zakladatel WebPilotu, tvorba a redesign webů" class="about-photo" loading="lazy" decoding="async">
-      <div class="about-card">
-        <div class="row">
-          <div class="av">VB</div>
-          <div class="info">
-            <b>Vladimír Běhavý
-              <svg class="verified" viewBox="0 0 24 24" fill="none" aria-label="Ověřeno"><path d="M12 2l2.4 1.8 3 .1 1 2.8 2.3 1.9-1 2.8 0 3-2.6 1.5-1.5 2.6-3-.4-2.6 1.5-2.6-1.5-3 .4-1.5-2.6L1.9 17l1-2.8 0-3 1-2.8 3-.1z" fill="var(--accent)"/><path d="M8.5 12.2l2.3 2.3 4.5-4.8" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </b>
-            <span>Zakladatel WebPilotu · Most</span>
-          </div>
-        </div>
-        <div class="about-skills">
-          <span>Design</span><span>Vývoj</span><span>SEO</span><span>Copywriting</span>
-        </div>
-        <div class="about-float">
-          <div class="fl-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
-          <div class="fl-txt"><div class="n">100 %</div><div class="t">projektů předáno v&nbsp;termínu</div></div>
-        </div>
-      </div>
     </div>
 
     <div class="about-copy reveal d1">
       <span class="eyebrow">Kdo jsem</span>
       <h2 class="h2" style="margin-top:16px;">Jeden člověk s velkým důrazem na detail.</h2>
-      <p class="lead">Nejsem agentura s desítkami zaměstnanců — jste v přímém kontaktu se mnou, tedy s člověkem, který na vašem webu skutečně pracuje. Mluvím lidsky a stojím si za výsledkem.</p>
+      <p class="lead">Nejsem anonymní agentura. Jste v přímém kontaktu se mnou — člověkem, který na vašem webu skutečně pracuje. Komunikuji otevřeně, lidsky a za výsledkem si stojím.</p>
+
+      <div class="about-why">
+        <p>Nepotřebujete web, který jen vypadá dobře. Potřebujete web, který vám <strong>přivede zákazníky a ušetří čas</strong>. Než začnu cokoliv navrhovat, zjistím, kdo je váš zákazník a co ho má na stránce přesvědčit. Teprve pak řeším, jak to bude vypadat.</p>
+      </div>
 
       <div class="about-list">
         <div class="it">
@@ -1115,6 +1096,9 @@
         </div>
         <div class="it">
           <div><h4>Jednám na rovinu</h4><p>Pevné termíny, jasná cena předem a průběžné náhledy. Víte přesně, za co platíte.</p></div>
+        </div>
+        <div class="it">
+          <div><h4>Max. 4 zakázky měsíčně</h4><p>Každý měsíc přijímám maximálně čtyři nové zakázky — díky tomu se každému projektu věnuji naplno, na 110 %.</p></div>
         </div>
       </div>
       <a class="btn btn-dark" href="#kontakt" style="margin-top:30px;">Pojďme se poznat
@@ -1129,7 +1113,7 @@
   <div class="wrap">
     <div class="sec-head center reveal">
       <h2 class="h2">Weby, které pro klienty už fungují.</h2>
-      <p class="lead">Pár referencí od lidí, se kterými jsem spolupracoval.</p>
+      <p class="lead">Reference od zákazníků, se kterými spolupracuji.</p>
     </div>
 
     <div class="case-grid">
@@ -1239,15 +1223,23 @@
     <div class="faq-wrap">
       <details class="faq reveal" open>
         <summary>Jak mám jistotu, že web dopadne dobře?<span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <div class="ans"><p>Výsledek vidíte dřív, než se rozhodnete. Připravím vám nezávazný návrh úvodní stránky zdarma — teprve když se vám líbí, pokračujeme. K tomu máte pevnou cenu předem i daný termín, takže do ničeho nejdete naslepo.</p></div>
+        <div class="ans"><p>Nezávazný návrh úvodní stránky zdarma uvidíte ještě před rozhodnutím. Pokračujeme až ve chvíli, kdy se vám návrh líbí. Navíc získáte pevnou cenu i termín realizace předem. Bez rizika a nepříjemných překvapení.</p></div>
       </details>
       <details class="faq reveal d1">
         <summary>Co znamená „návrh zdarma"?<span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <div class="ans"><p>Zdarma a nezávazně připravím vizuální návrh webu, abyste viděli směr a styl ještě před objednávkou. Kompletní web, podstránky a další práce jsou už součástí placené zakázky podle dohodnutého rozsahu.</p></div>
+        <div class="ans"><p>Než se rozhodnete, připravím vám nezávazný vizuální návrh webu, abyste si mohli udělat představu o jeho směru a stylu. Kompletní tvorba webu, podstránek a dalších prvků je následně realizována jako placená zakázka dle dohodnutého rozsahu.</p></div>
       </details>
       <details class="faq reveal d1">
         <summary>Kolik stojí vytvoření webu?<span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
         <div class="ans"><p>Kompletní web pro firmy a podnikatele začíná na pevné ceně, kterou znáte předem. Cenu služeb najdete v ceníku.</p></div>
+      </details>
+      <details class="faq reveal d1">
+        <summary>Jak probíhá platba za web?<span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="ans"><p>Nejprve dostanete nezávazný návrh webu zdarma. Pokud se vám bude líbit a budete chtít pokračovat, platí se 50 % záloha na zahájení prací a zbylých 50 % doplatíte až po dokončení a předání hotového webu.</p></div>
+      </details>
+      <details class="faq reveal d1">
+        <summary>Je v ceně i hosting a doména?<span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="ans"><p>Hosting webu je vždy součástí ceny. Doménu si buď zajistíte sami, nebo ji vyřešíme společně — poradím s výběrem i registrací.</p></div>
       </details>
       <details class="faq reveal d1">
         <summary>Jak dlouho trvá vytvoření webu?<span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
@@ -1279,6 +1271,9 @@
           <span class="eyebrow">Kontakt</span>
           <h2>Pojďme rozjet váš nový web.</h2>
           <p class="lead">Napište mi pár slov o vašem projektu. Ozvu se do 24 hodin s návrhem dalšího postupu — nezávazně a zdarma.</p>
+          <div class="contact-capacity">
+            <p><strong>Každý měsíc přijímám maximálně čtyři nové zakázky</strong> — díky tomu se každému projektu věnuji naplno, na 110 %.</p>
+          </div>
           <div class="contact-side">
             <div class="ci"><div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M4 6l8 6 8-6"/></svg></div><div><b>info@web-pilot.cz</b><span>Odpovídám obvykle týž den</span></div></div>
             <div class="ci"><div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2z"/></svg></div><div><b>+420 773 171 707</b></div></div>
