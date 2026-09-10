@@ -410,7 +410,7 @@
 
   /* Floating thumbnails of real client sites, flanking the headline */
   .xhero-float {
-    position: absolute; z-index: 1; width: clamp(105px, calc((100% - 860px) / 2 - 86px), 215px);
+    position: absolute; z-index: 1; width: clamp(130px, calc((100% - 820px) / 2 - 48px), 290px);
     border-radius: 14px; overflow: hidden; background: #0d1f19;
     border: 1px solid rgba(255,255,255,.16);
     box-shadow: 0 24px 50px -18px rgba(0,0,0,.65);
@@ -421,9 +421,12 @@
   .xhero-float--2 { right: 20px; top: 16%; rotate: 6deg; animation-delay: -3.4s; }
   .xhero-float--3 { left: 20px; top: 50%; rotate: -4deg; animation-delay: -5.6s; }
   .xhero-float--4 { right: 20px; top: 50%; rotate: 5deg; animation-delay: -2.4s; }
-  .xhero-float--3, .xhero-float--4 { opacity: .8; }
+  .xhero-float--4 { opacity: .9; }
+  /* filiplejcek.cz preview: match Krystal's width, show the supplied screenshot exactly (no crop) */
+  .xhero-float.xhero-float--3 { width: clamp(170px, calc((100% - 820px) / 2 - 28px), 380px); opacity: 1; }
+  .xhero-float.xhero-float--3 img { aspect-ratio: 1894 / 910; opacity: 1; object-fit: cover; }
   .xhero-float--featured {
-    z-index: 2; width: clamp(150px, calc((100% - 860px) / 2 - 65px), 320px);
+    z-index: 2; width: clamp(170px, calc((100% - 820px) / 2 - 28px), 380px);
     border-color: rgba(110,231,183,.5);
     box-shadow: 0 30px 64px -16px rgba(0,0,0,.7), 0 0 0 1px rgba(110,231,183,.3), 0 0 46px -6px rgba(110,231,183,.55);
   }
@@ -543,6 +546,12 @@
     display: block;
   }
   .about-photo:hover { transform: scale(1.02) translateY(-2px); border-color: rgba(14,159,110,.4); box-shadow: 0 20px 60px rgba(14, 159, 110, .14), inset 0 1px 0 rgba(255,255,255,.2); }
+  .about-signature {
+    max-width: 380px; margin: 22px 0 0; padding-top: 18px;
+    display: flex; flex-direction: column; align-items: flex-end;
+    border-top: 1px solid var(--line-2);
+  }
+  .signature-img { width: clamp(150px, 22vw, 190px); aspect-ratio: 901 / 208; height: auto; display: block; opacity: .92; }
   .about-copy .lead { margin-top: 20px; }
   .about-why {
     position: relative; margin-top: 26px; padding: 22px 26px 22px 28px;
@@ -731,6 +740,7 @@
   .reveal.d2 { transition-delay: .16s; }
   .reveal.d3 { transition-delay: .24s; }
   .reveal.d4 { transition-delay: .32s; }
+  .reveal.d5 { transition-delay: .40s; }
 
   @media (prefers-reduced-motion: reduce) {
     .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
@@ -889,9 +899,9 @@
   <div class="xhero-float xhero-float--3 reveal in d3" aria-hidden="true">
     <div class="xhero-float-bar">
       <span class="case-dots"><i></i><i></i><i></i></span>
-      <span class="xhero-float-domain">barbershoplouny.cz</span>
+      <span class="xhero-float-domain">filiplejcek.cz</span>
     </div>
-    <img src="thumb-barbershop.jpg" alt="" loading="lazy" decoding="async" />
+    <img src="thumb-filip.jpg?v=2" alt="" loading="lazy" decoding="async" />
   </div>
   <div class="xhero-float xhero-float--4 reveal in d3" aria-hidden="true">
     <div class="xhero-float-bar">
@@ -1082,6 +1092,9 @@
   <div class="wrap about-grid">
     <div class="about-visual reveal">
       <img src="vladimir.png" alt="Vladimír Běhavý — zakladatel WebPilotu, tvorba a redesign webů" class="about-photo" loading="lazy" decoding="async">
+      <div class="about-signature">
+        <img src="signature-vladimir.png" alt="Podpis Vladimíra Běhavého" class="signature-img" loading="lazy" decoding="async">
+      </div>
     </div>
 
     <div class="about-copy reveal d1">
@@ -1211,6 +1224,29 @@
           <div>
             <b>Jakub Špička</b>
             <span>Goodfellas Barber Shop</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-card reveal d5">
+        <a class="case-browser" href="https://www.filiplejcek.cz/" target="_blank" rel="noopener noreferrer" aria-label="Otevřít web filiplejcek.cz">
+          <span class="case-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="case-domain">filiplejcek.cz</span>
+          <span class="case-stars" aria-label="Hodnocení 5 z 5 hvězdiček">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.6 7.1.7-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7-5.4-4.7 7.1-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.6 7.1.7-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7-5.4-4.7 7.1-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.6 7.1.7-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7-5.4-4.7 7.1-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.6 7.1.7-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7-5.4-4.7 7.1-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.6 7.1.7-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7-5.4-4.7 7.1-.7z"/></svg>
+          </span>
+          <svg class="case-browser-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>
+        <p class="case-quote">Na propagaci jsem dlouho spoléhal jen na sociální sítě, ale chtěl jsem mít i vlastní profesionální web. Na doporučení kamaráda jsem oslovil WebPilot — do čtyř dnů jsem měl hotový návrh a během pár dalších dní jsme ho společně doladili přesně podle mých představ. Komunikace byla na výbornou, lidská a srozumitelná po celou dobu spolupráce. Chtěl jsem web, který u klientů udělá profesionálnější dojem a přinese víc poptávek — přesně to se stalo. Výsledek navíc vypadá naprosto skvěle.</p>
+        <div class="case-person">
+          <img class="case-avatar" src="recenze-filip.png" alt="Filip Lejček" loading="lazy" decoding="async" />
+          <div>
+            <b>Filip Lejček</b>
+            <span>Profesionální moderátor</span>
           </div>
         </div>
       </div>
