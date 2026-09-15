@@ -469,6 +469,9 @@
   .marquee-track span { font-family: var(--serif); font-size: 1.5rem; font-weight: 600; color: #a9b6b0; white-space: nowrap; letter-spacing: -.01em; }
   @keyframes scroll { to { transform: translateX(-50%); } }
 
+  /* ---------- Mobile showcase (replaces logos marquee on phones) ---------- */
+  .mobile-showcase { display: none; }
+
   /* ---------- Section shell ---------- */
   section.block { padding: clamp(72px, 10vw, 128px) 0; }
   .sec-head { max-width: 660px; }
@@ -824,6 +827,21 @@
     .xhero-subtitle { font-size: .97rem; max-width: 92%; }
     .xhero-badge { font-size: 11px; padding: 8px 14px 8px 16px; }
     .xhero-glow { bottom: -520px; height: 620px; }
+
+    /* Swap the logos marquee for a showcase grid of built sites */
+    .logos { display: none; }
+    .mobile-showcase { display: block; padding: 40px 0 46px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--bg-soft); }
+    .mobile-showcase .cap { text-align: center; font-size: 12.5px; letter-spacing: .09em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+    .mshow-grid { margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .mshow-card {
+      display: block; background: var(--bg); border: 1px solid var(--line); border-radius: 16px; overflow: hidden;
+      box-shadow: var(--shadow-sm); transition: transform .25s var(--ease), box-shadow .25s var(--ease), border-color .25s var(--ease);
+    }
+    .mshow-card:active { transform: scale(.97); box-shadow: var(--shadow-md); border-color: var(--line-2); }
+    .mshow-bar { display: flex; align-items: center; gap: 6px; padding: 8px 9px; background: var(--bg-soft); border-bottom: 1px solid var(--line); }
+    .mshow-domain { font-family: var(--sans); font-size: 10.5px; font-weight: 600; color: var(--ink-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; letter-spacing: -.01em; }
+    .mshow-arrow { width: 11px; height: 11px; margin-left: auto; color: var(--accent-deep); flex-shrink: 0; }
+    .mshow-card img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
   }
 
   /* Hero: on short desktop/laptop viewports, tighten padding so the CTA note stays visible without scrolling */
@@ -940,6 +958,47 @@
         <span>Prosecco v srdci</span><span>Martina Vysloužilová photography</span><span>Behyshop</span><span>Goodfellas Barber Shop Louny</span><span>Krystal</span><span>Chata u Lubátka</span><span>Filip Lejček</span>
         <span>Prosecco v srdci</span><span>Martina Vysloužilová photography</span><span>Behyshop</span><span>Goodfellas Barber Shop Louny</span><span>Krystal</span><span>Chata u Lubátka</span><span>Filip Lejček</span>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MOBILE SHOWCASE (nahrazuje lištu klientů na mobilu) ===================== -->
+<section class="mobile-showcase" aria-label="Ukázky vytvořených webů">
+  <div class="wrap">
+    <p class="cap">Weby, které jsem vytvořil</p>
+    <div class="mshow-grid">
+      <a class="mshow-card" href="https://www.stone-krystal.cz/" target="_blank" rel="noopener noreferrer" aria-label="Otevřít web stone-krystal.cz">
+        <span class="mshow-bar">
+          <span class="case-dots"><i></i><i></i><i></i></span>
+          <span class="mshow-domain">stone-krystal.cz</span>
+          <svg class="mshow-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </span>
+        <img src="thumb-krystal.jpg" alt="Náhled webu stone-krystal.cz" loading="lazy" decoding="async" />
+      </a>
+      <a class="mshow-card" href="https://www.filiplejcek.cz/" target="_blank" rel="noopener noreferrer" aria-label="Otevřít web filiplejcek.cz">
+        <span class="mshow-bar">
+          <span class="case-dots"><i></i><i></i><i></i></span>
+          <span class="mshow-domain">filiplejcek.cz</span>
+          <svg class="mshow-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </span>
+        <img src="thumb-filip.jpg?v=2" alt="Náhled webu filiplejcek.cz" loading="lazy" decoding="async" />
+      </a>
+      <a class="mshow-card" href="https://www.chataulubatka.cz/" target="_blank" rel="noopener noreferrer" aria-label="Otevřít web chataulubatka.cz">
+        <span class="mshow-bar">
+          <span class="case-dots"><i></i><i></i><i></i></span>
+          <span class="mshow-domain">chataulubatka.cz</span>
+          <svg class="mshow-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </span>
+        <img src="thumb-chata.jpg" alt="Náhled webu chataulubatka.cz" loading="lazy" decoding="async" />
+      </a>
+      <a class="mshow-card" href="https://www.proseccovsrdci.cz/" target="_blank" rel="noopener noreferrer" aria-label="Otevřít web proseccovsrdci.cz">
+        <span class="mshow-bar">
+          <span class="case-dots"><i></i><i></i><i></i></span>
+          <span class="mshow-domain">proseccovsrdci.cz</span>
+          <svg class="mshow-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </span>
+        <img src="thumb-prosecco.jpg" alt="Náhled webu proseccovsrdci.cz" loading="lazy" decoding="async" />
+      </a>
     </div>
   </div>
 </section>
