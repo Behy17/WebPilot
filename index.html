@@ -832,7 +832,8 @@
     .logos { display: none; }
     .mobile-showcase { display: block; padding: 40px 0 46px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--bg-soft); }
     .mobile-showcase .cap { text-align: center; font-size: 12.5px; letter-spacing: .09em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
-    .mshow-grid { margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: start; }
+    .mshow-grid { margin-top: 20px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; align-items: start; }
+    .mshow-card--wide { grid-column: 1 / -1; }
     .mshow-card {
       display: block; background: var(--bg); border: 1px solid var(--line); border-radius: 16px; overflow: hidden;
       box-shadow: var(--shadow-sm); transition: transform .25s var(--ease), box-shadow .25s var(--ease), border-color .25s var(--ease);
@@ -841,6 +842,11 @@
     .mshow-bar { display: flex; align-items: center; gap: 6px; padding: 8px 9px; background: var(--bg-soft); border-bottom: 1px solid var(--line); }
     .mshow-domain { font-family: var(--sans); font-size: 10.5px; font-weight: 600; color: var(--ink-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; letter-spacing: -.01em; }
     .mshow-arrow { width: 11px; height: 11px; margin-left: auto; color: var(--accent-deep); flex-shrink: 0; }
+    /* Narrow (non-featured) tiles: wrap the domain instead of truncating it, drop the arrow to save space */
+    .mshow-grid .mshow-card:not(.mshow-card--wide) .mshow-bar { align-items: flex-start; gap: 5px; padding: 7px 8px; }
+    .mshow-grid .mshow-card:not(.mshow-card--wide) .case-dots { margin-top: 2px; flex-shrink: 0; }
+    .mshow-grid .mshow-card:not(.mshow-card--wide) .mshow-domain { font-size: 9.5px; line-height: 1.25; white-space: normal; overflow-wrap: anywhere; }
+    .mshow-grid .mshow-card:not(.mshow-card--wide) .mshow-arrow { display: none; }
     .mshow-card img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
     .mshow-card--wide img { aspect-ratio: 1200 / 577; object-fit: cover; }
   }
@@ -968,14 +974,6 @@
   <div class="wrap">
     <p class="cap">Ukázky některých webů, které jsem vytvořil</p>
     <div class="mshow-grid">
-      <a class="mshow-card" href="https://www.stone-krystal.cz/" target="_blank" rel="noopener noreferrer" aria-label="Otevřít web stone-krystal.cz">
-        <span class="mshow-bar">
-          <span class="case-dots"><i></i><i></i><i></i></span>
-          <span class="mshow-domain">stone-krystal.cz</span>
-          <svg class="mshow-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
-        </span>
-        <img src="thumb-krystal.jpg" alt="Náhled webu stone-krystal.cz" loading="lazy" decoding="async" />
-      </a>
       <a class="mshow-card mshow-card--wide" href="https://www.filiplejcek.cz/" target="_blank" rel="noopener noreferrer" aria-label="Otevřít web filiplejcek.cz">
         <span class="mshow-bar">
           <span class="case-dots"><i></i><i></i><i></i></span>
@@ -983,6 +981,14 @@
           <svg class="mshow-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
         </span>
         <img src="thumb-filip.jpg?v=2" alt="Náhled webu filiplejcek.cz" loading="lazy" decoding="async" />
+      </a>
+      <a class="mshow-card" href="https://www.stone-krystal.cz/" target="_blank" rel="noopener noreferrer" aria-label="Otevřít web stone-krystal.cz">
+        <span class="mshow-bar">
+          <span class="case-dots"><i></i><i></i><i></i></span>
+          <span class="mshow-domain">stone-krystal.cz</span>
+          <svg class="mshow-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </span>
+        <img src="thumb-krystal.jpg" alt="Náhled webu stone-krystal.cz" loading="lazy" decoding="async" />
       </a>
       <a class="mshow-card" href="https://www.chataulubatka.cz/" target="_blank" rel="noopener noreferrer" aria-label="Otevřít web chataulubatka.cz">
         <span class="mshow-bar">
