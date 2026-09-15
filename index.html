@@ -842,6 +842,7 @@
     .mshow-domain { font-family: var(--sans); font-size: 10.5px; font-weight: 600; color: var(--ink-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; letter-spacing: -.01em; }
     .mshow-arrow { width: 11px; height: 11px; margin-left: auto; color: var(--accent-deep); flex-shrink: 0; }
     .mshow-card img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+    .mshow-card--wide img { object-fit: contain; background: var(--bg-soft); }
   }
 
   /* Hero: on short desktop/laptop viewports, tighten padding so the CTA note stays visible without scrolling */
@@ -965,7 +966,7 @@
 <!-- ===================== MOBILE SHOWCASE (nahrazuje lištu klientů na mobilu) ===================== -->
 <section class="mobile-showcase" aria-label="Ukázky vytvořených webů">
   <div class="wrap">
-    <p class="cap">Weby, které jsem vytvořil</p>
+    <p class="cap">Ukázky některých webů, které jsem vytvořil</p>
     <div class="mshow-grid">
       <a class="mshow-card" href="https://www.stone-krystal.cz/" target="_blank" rel="noopener noreferrer" aria-label="Otevřít web stone-krystal.cz">
         <span class="mshow-bar">
@@ -975,7 +976,7 @@
         </span>
         <img src="thumb-krystal.jpg" alt="Náhled webu stone-krystal.cz" loading="lazy" decoding="async" />
       </a>
-      <a class="mshow-card" href="https://www.filiplejcek.cz/" target="_blank" rel="noopener noreferrer" aria-label="Otevřít web filiplejcek.cz">
+      <a class="mshow-card mshow-card--wide" href="https://www.filiplejcek.cz/" target="_blank" rel="noopener noreferrer" aria-label="Otevřít web filiplejcek.cz">
         <span class="mshow-bar">
           <span class="case-dots"><i></i><i></i><i></i></span>
           <span class="mshow-domain">filiplejcek.cz</span>
