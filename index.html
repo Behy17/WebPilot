@@ -841,7 +841,8 @@
     .mshow-bar { display: flex; align-items: center; gap: 6px; padding: 8px 9px; background: var(--bg-soft); border-bottom: 1px solid var(--line); }
     .mshow-domain { font-family: var(--sans); font-size: 10.5px; font-weight: 600; color: var(--ink-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; letter-spacing: -.01em; }
     .mshow-arrow { width: 11px; height: 11px; margin-left: auto; color: var(--accent-deep); flex-shrink: 0; }
-    .mshow-card img { display: block; width: 100%; aspect-ratio: 1200 / 577; object-fit: cover; }
+    .mshow-card img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+    .mshow-card img[src*="thumb-filip"] { aspect-ratio: 1200 / 577; }
   }
 
   /* Hero: on short desktop/laptop viewports, tighten padding so the CTA note stays visible without scrolling */
