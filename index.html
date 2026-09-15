@@ -832,7 +832,7 @@
     .logos { display: none; }
     .mobile-showcase { display: block; padding: 40px 0 46px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--bg-soft); }
     .mobile-showcase .cap { text-align: center; font-size: 12.5px; letter-spacing: .09em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
-    .mshow-grid { margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .mshow-grid { margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: start; }
     .mshow-card {
       display: block; background: var(--bg); border: 1px solid var(--line); border-radius: 16px; overflow: hidden;
       box-shadow: var(--shadow-sm); transition: transform .25s var(--ease), box-shadow .25s var(--ease), border-color .25s var(--ease);
@@ -842,7 +842,7 @@
     .mshow-domain { font-family: var(--sans); font-size: 10.5px; font-weight: 600; color: var(--ink-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; letter-spacing: -.01em; }
     .mshow-arrow { width: 11px; height: 11px; margin-left: auto; color: var(--accent-deep); flex-shrink: 0; }
     .mshow-card img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
-    .mshow-card--wide img { object-fit: contain; background: var(--bg-soft); }
+    .mshow-card--wide img { aspect-ratio: 1200 / 577; object-fit: cover; }
   }
 
   /* Hero: on short desktop/laptop viewports, tighten padding so the CTA note stays visible without scrolling */
