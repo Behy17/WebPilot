@@ -77,7 +77,7 @@ exports.handler = async function (event) {
   try {
     await transporter.sendMail({
       from: '"WebPilot formulář" <' + process.env.SMTP_USER + ">",
-      to: process.env.SMTP_USER,
+      to: "vladimir.behavy@web-pilot.cz",
       replyTo: email,
       subject: "Nová poptávka z webu WebPilot",
       text: text,
