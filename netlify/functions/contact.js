@@ -84,6 +84,7 @@ exports.handler = async function (event) {
       html: html,
     });
   } catch (err) {
+    console.error("SMTP send failed:", err && err.message, err && err.code);
     return { statusCode: 502, body: JSON.stringify({ error: "Email send failed" }) };
   }
 
